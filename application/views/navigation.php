@@ -57,16 +57,11 @@ switch ($active) {
 	  </div>
 	</nav>
 <ul class="nav navbar-menu shadow-light -twitter pt-2 pb-0 pl-5 m-0">
-<<<<<<< HEAD
+
   <li class="item <?php echo $home?>"><a class="link no-deco" href="/">Home</a></li>
   <li class="item <?php echo $employee?>"><a class="link no-deco" href='/employee'>Employee</a></li>
   <li class="item <?php echo $evaluation?>"><a class="link no-deco" href="/evaluation">Evaluation</a></li>
   <li class="item <?php echo $message?>"><a class="link no-deco">Message</a></li>
-=======
-  <li class="item <?php echo $home?>"><a class="link  active-nav" href="/">Home</a></li>
-  <li class="item <?php echo $employee?>"><a class="link no-deco inactive-nav" href='/employee'>Employee</a></li>
-  <li class="item <?php echo $evaluation?>"><a class="link no-deco inactive-nav" href="/evaluation">Evaluation</a></li>
-  <li class="item <?php echo $message?>"><a class="link no-deco inactive-nav">Message</a></li>
->>>>>>> 80666b3ae66da3c2912010d7b8f7b1053d2b4d02
+
 </ul>
 </div>
