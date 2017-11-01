@@ -9,12 +9,13 @@ p, h6 {
 }
 .no-deco {
 	text-decoration: none !important;
+	color:#252525 !important;
 }
 .active-nav {
 	color: #2196F3 !important;
 }
-.inactive-nav {
-	color:#252525 !important;
+.active-nav a {
+	color: #2196F3 !important;
 }
 .em-f {
 	font-size: 1em;
@@ -206,6 +207,9 @@ p, h6 {
 .navbar-menu.-twitter > .item.-active::after {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
+}
+.-active a{
+	color: #2196F3 !important;
 }
 .navbar-menu.-twitter > .item::after {
   content: '';
