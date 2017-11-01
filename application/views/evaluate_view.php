@@ -17,7 +17,7 @@
 			</div>
 			<div class="text-center pt-5">
 				<a href="#" class="evaluate-l text-white">Here to login? </a>
-				<h5 class="pt-4 ml-3"><a href="" class="evaluate-l text-white">Go to login<i class="material-icons align-middle">keyboard_arrow_right</i> </a></h5>
+				<h5 class="pt-4 ml-3"><a href="/" class="evaluate-l text-white">Go to login<i class="material-icons align-middle">keyboard_arrow_right</i> </a></h5>
 			</div>
 		</div>
 	</div>
