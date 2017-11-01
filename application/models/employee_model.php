@@ -22,6 +22,4 @@ class employee_model extends CI_Model {
 	function add_employee($data){
 		$this->db->insert('employee',$data);
 	}
-
-
 }
