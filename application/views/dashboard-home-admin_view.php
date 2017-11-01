@@ -42,7 +42,7 @@ switch ($active_filter) {
 		  </li>
 		</ul>
 	</div>
-	<h3 class="ml-5 pl-3 pt-3 open-sans"><strong>hello world</strong></h3>
+	<h3 class="ml-5 pl-3 pt-3 open-sans"><strong>Announcement</strong></h3>
 	<div class="row pb-5">
 	<?php foreach ($posts as $post) { 
 
