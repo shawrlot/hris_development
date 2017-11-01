@@ -7,9 +7,9 @@
 			<div class="sbefore-card shadow col-sm-4 col-md-6 col-lg-3">
 				<h3 class="accent pb-2 ">Before we start</h3>
 				<hr class="pb-2 border-dark">
-				<form>
+				<form method=POST action="evaluation/start_evaluation">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Enter your pin">
+						<input type="text" name="pin" required class="form-control" placeholder="Enter your pin">
 					</div>
 					<a href="#">Don't have a pin?</a>
 					<button class="mt-3 btn btn-accent w-100">Verify PIN</button>
