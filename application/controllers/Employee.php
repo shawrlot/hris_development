@@ -12,5 +12,6 @@ class Employee extends CI_Controller {
 		$data['filters'] = $this->employee_model->get_filter();
 		$data['employees'] = $this->employee_model->get_employee();
 		$this->load->view('employee_view',$data);
+		echo "sample";
 	}
 }
