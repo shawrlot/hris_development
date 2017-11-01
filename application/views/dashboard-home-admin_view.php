@@ -87,7 +87,27 @@ switch ($active_filter) {
 
 	<?php }} ?>
 	
-		<button class="fixed-bottom btn btn-primary ml-auto shadow float-right btn-accent" style="margin-right: 22px; margin-bottom: 22px; height: 65px; width: 65px; border-radius: 100%;"><i class="material-icons white-text mx-auto pt-1">add</i></button>
-		
+<!-- 		<button class="fixed-bottom btn btn-primary ml-auto shadow float-right btn-accent floating-btn" data-toggle="modal" data-target="#exampleModal"><i class="material-icons white-text mx-auto pt-1">add</i></button> -->
+		<button type="button" class="btn btn-primary floating-btn" data-toggle="modal" data-target="#exampleModal"><i class="material-icons white-text mx-auto pt-1">add</i></button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        ...
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
 <?php include 'footer.php' ?>
