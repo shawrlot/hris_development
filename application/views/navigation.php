@@ -9,7 +9,7 @@ $message = null;
 
 switch ($active) {
 	case 'home':
-		$home = '-active accent';
+		$home = '-active accent ';
 		break;
 		case 'employee':
 		$employee = '-active accent';
@@ -49,7 +49,7 @@ switch ($active) {
 		      </a>
 		      <!-- dropdown items here -->
 		      <div class="dropdown-menu dropdown-menu-right">
-			      <a class="dropdown-item" href="#">Action</a>
+			      <a class="dropdown-item" href="/logout">Logout</a>
 		   	  </div>
 		      <!-- end of dropdown -->
 	  		</li>
@@ -57,7 +57,7 @@ switch ($active) {
 	  </div>
 	</nav>
 <ul class="nav navbar-menu shadow-light -twitter pt-2 pb-0 pl-5 m-0">
-  <li class="item <?php echo $home?>"><a class="link no-deco active-nav" href="/">Home</a></li>
+  <li class="item <?php echo $home?>"><a class="link  active-nav" href="/">Home</a></li>
   <li class="item <?php echo $employee?>"><a class="link no-deco inactive-nav" href='/employee'>Employee</a></li>
   <li class="item <?php echo $evaluation?>"><a class="link no-deco inactive-nav" href="/evaluation">Evaluation</a></li>
   <li class="item <?php echo $message?>"><a class="link no-deco inactive-nav">Message</a></li>
