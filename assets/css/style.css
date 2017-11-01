@@ -7,6 +7,9 @@ p, h6 {
 	font-family: 'Open Sans', sans-serif;
 	color: #252525;
 }
+.no-deco {
+	text-decoration: none !important;
+}
 .em-f {
 	font-size: 1em;
 }
