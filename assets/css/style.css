@@ -7,6 +7,16 @@ p, h6 {
 	font-family: 'Open Sans', sans-serif;
 	color: #252525;
 }
+.no-deco {
+	text-decoration: none !important;
+	color:#252525 !important;
+}
+.active-nav {
+	color: #2196F3 !important;
+}
+.active-nav a {
+	color: #2196F3 !important;
+}
 .em-f {
 	font-size: 1em;
 }
@@ -198,6 +208,9 @@ p, h6 {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
 }
+.-active a{
+	color: #2196F3 !important;
+}
 .navbar-menu.-twitter > .item::after {
   content: '';
   -webkit-transform: scaleY(0);
@@ -222,4 +235,14 @@ p, h6 {
 .date-box {
 	padding-left: 60px;
 	padding-right: 60px;
+}
+.floating-btn {
+/*	margin-right: 22px;
+	margin-bottom: 22px;*/
+	top: 680px;
+	left: 95%;
+	height: 65px; 
+	width: 65px; 
+	border-radius: 100%;
+	position: fixed;
 }
