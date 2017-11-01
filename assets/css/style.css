@@ -237,12 +237,7 @@ p, h6 {
 	padding-right: 60px;
 }
 .floating-btn {
-/*	margin-right: 22px;
-	margin-bottom: 22px;*/
-	top: 680px;
-	left: 95%;
 	height: 65px; 
 	width: 65px; 
 	border-radius: 100%;
-	position: fixed;
 }
