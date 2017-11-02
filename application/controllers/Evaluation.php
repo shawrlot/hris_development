@@ -43,6 +43,9 @@ class Evaluation extends CI_Controller {
 	}
 	public function session_introduction(){
 		print_r($this->session->userdata('evaluation'));
+
+
+		$this->load->view('evaluation-question_view');
 	}
 
 }
