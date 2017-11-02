@@ -12,10 +12,15 @@ class evaluation_model extends CI_MODEL {
 			return $this->db->join('subject','load.load_subject=subject.subject_id')
 					 ->join('employee','load_employee=employee_id')
 					 ->join('department','employee_department=department.department_id')
+					 ->join('pin','load_id=pin_load')
 					 ->get('load')->result_array();
 		}
 		else{
 			return false;
 		}
+	}
+	public function create_session($data){
+		$this->db->insert('session',array('session_pin'=>$data));
+		return $this->db->insert_id();
 	}
 }

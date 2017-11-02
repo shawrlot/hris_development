@@ -53,6 +53,8 @@ $route['default_controller'] = 'post';
 $route['login'] = 'authentication/login';
 $route['logout'] = 'authentication/logout';
 $route['start'] = 'evaluation/start_evaluation';
+$route['evaluation-begin'] = 'evaluation/create_session';
+$route['introduction'] = 'evaluation/session_introduction';
 
 
 $route['404_override'] = '';

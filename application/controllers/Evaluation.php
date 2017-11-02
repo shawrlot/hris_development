@@ -22,13 +22,27 @@ class Evaluation extends CI_Controller {
 	public function start_evaluation(){
 		$pin = $this->input->post('pin');
 		if ($pin_details = $this->evaluation_model->pin_check($pin)){
-			var_dump($pin_details);
+			// var_dump($pin_details);
 			$data['evaluation'] = $pin_details[0];
+			$data['title'] = 'Step 2: Verify';
 			$this->load->view('evaluation-start_view',$data);
 		}
 		else{
-			echo 'nothing found';
+			header('location:/evaluation');
 		}
+	}
+	public function create_session(){
+		if ($x = $this->input->post('pin')) {
+			$session_id = $this->evaluation_model->create_session($x);
+			$this->session->set_userdata('evaluation',array('session_id'=>$session_id));
+			header('location:/introduction');
+		}
+		else{
+			header('location:/evaluation');
+		}
+	}
+	public function session_introduction(){
+		print_r($this->session->userdata('evaluation'));
 	}
 
 }

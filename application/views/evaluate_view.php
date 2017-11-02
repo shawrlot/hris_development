@@ -9,7 +9,7 @@
 				<hr class="pb-2 border-dark">
 				<form method=POST action="/start">
 					<div class="form-group">
-						<input type="text" name="pin" required class="form-control" placeholder="Enter your pin">
+						<input type="text" name="pin" required maxlength="6" class="form-control" placeholder="Enter your pin">
 					</div>
 					<a href="#">Don't have a pin?</a>
 					<button class="mt-3 btn btn-accent w-100">Verify PIN</button>
