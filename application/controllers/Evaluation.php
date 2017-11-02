@@ -23,6 +23,8 @@ class Evaluation extends CI_Controller {
 		$pin = $this->input->post('pin');
 		if ($pin_details = $this->evaluation_model->pin_check($pin)){
 			var_dump($pin_details);
+			$data['evaluation'] = $pin_details[0];
+			$this->load->view('evaluation-start_view',$data);
 		}
 		else{
 			echo 'nothing found';
