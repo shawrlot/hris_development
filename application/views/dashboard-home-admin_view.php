@@ -58,8 +58,7 @@ switch ($active_filter) {
 						  <div class="mt-2 pt-3 pb-4 pl-4 pr-2 ml-2">
 						  	<h3 class="p-0 m-0 f-bold"><?php echo highlight_phrase(word_limiter($post['post_title'], 100),$keyword_here, '<span style="font-weight:bold;">', '</span>');?></h3>
 						  	<p class="card-text pt-1"><small class="text-muted"><?php echo $post['account_username'];?> | Posted at 10-24-2017 16:45</small></p>
-						  	<h1>Hello WOrld</h1>
-						  	<p><?php echo highlight_phrase(word_limiter($post['post_body'], 100),$keyword_here, '<span style="font-weight:bold;">', '</span>');?></p>
+								  	<p><?php echo highlight_phrase(word_limiter($post['post_body'], 100),$keyword_here, '<span style="font-weight:bold;">', '</span>');?></p>
 						  	<button type="button" class="btn btn-post f-normal c-raduis float-right mr-5">Read More</button>
 						  </div>
 						</div>

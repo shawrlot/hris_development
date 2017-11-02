@@ -18,7 +18,7 @@
 			</div>
 			<div class="text-center pt-5">
 				<a href="#" class="evaluate-l">Here to evaluate?</a>
-				<h5 class="pt-4 center-text"><a href="/evaluate" class="accent deco-none">Start Now 
+				<h5 class="pt-4 center-text"><a href="/evaluation" class="accent deco-none">Start Now 
 					<hr class="border-0">
 					<i class="material-icons accent">expand_more</i>
 				</a>

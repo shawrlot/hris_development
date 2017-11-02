@@ -21,8 +21,12 @@ class Evaluation extends CI_Controller {
 	}
 	public function start_evaluation(){
 		$pin = $this->input->post('pin');
-		if ($this->evaluation_model->pin_check($pin)){
-			# code...
+		if ($pin_details = $this->evaluation_model->pin_check($pin)){
+			var_dump($pin_details);
+		}
+		else{
+			echo 'nothing found';
 		}
 	}
+
 }

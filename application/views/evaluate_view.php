@@ -7,7 +7,7 @@
 			<div class="sbefore-card shadow col-sm-4 col-md-6 col-lg-3">
 				<h3 class="accent pb-2 ">Before we start</h3>
 				<hr class="pb-2 border-dark">
-				<form method=POST action="evaluation/start_evaluation">
+				<form method=POST action="/start">
 					<div class="form-group">
 						<input type="text" name="pin" required class="form-control" placeholder="Enter your pin">
 					</div>
