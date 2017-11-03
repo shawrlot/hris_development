@@ -22,5 +22,23 @@ class evaluation_model extends CI_MODEL {
 	public function create_session($data){
 		$this->db->insert('session',array('session_pin'=>$data));
 		return $this->db->insert_id();
+		echo "red";
+	}
+	public function get_questions(){
+		return $this->db
+					->join('subcategory','question_subcategory=subcategory_id')
+					->join('category','subcategory_category=category_id')
+					->order_by('category_order')
+					->get('question')->result_array();
+	}
+	public function get_category(){
+		return $this->db->get('category')->result_array();
+	}
+	public function get_subcategory(){
+		return $this->db->get('subcategory')->result_array();
+	}
+	public function submit_answer($data){
+		// print_r($data);
+		$this->db->insert('sheet',$data);
 	}
 }

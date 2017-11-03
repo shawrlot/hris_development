@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2017 at 10:20 AM
+-- Generation Time: Nov 02, 2017 at 09:16 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -53,6 +53,15 @@ CREATE TABLE `category` (
   `category_name` varchar(45) NOT NULL,
   `category_description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_name`, `category_description`) VALUES
+(1, 'Effectiveness of Teaching', NULL),
+(2, 'Personal and Social Traits', NULL),
+(3, 'Additional Information', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,15 +140,16 @@ CREATE TABLE `employee` (
   `employee_status` int(12) NOT NULL,
   `employee_employmentStatus` int(12) NOT NULL,
   `employee_department` int(12) NOT NULL,
-  `employee_position` int(12) NOT NULL
+  `employee_position` int(12) NOT NULL,
+  `employee_photo` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`employee_id`, `employee_lastName`, `employee_firstName`, `employee_middleName`, `employee_dob`, `employee_address`, `employee_email`, `employee_account`, `employee_gender`, `employee_civilStatus`, `employee_religion`, `employee_status`, `employee_employmentStatus`, `employee_department`, `employee_position`) VALUES
-(13310146, 'Mariano', 'Jaycee', 'Lim', '1996-02-24', '198 Baraca Camachille Subic Zambales', 'alohajaycee@gmail.com', 1, 2, 4, NULL, 1, 1, 8, 1);
+INSERT INTO `employee` (`employee_id`, `employee_lastName`, `employee_firstName`, `employee_middleName`, `employee_dob`, `employee_address`, `employee_email`, `employee_account`, `employee_gender`, `employee_civilStatus`, `employee_religion`, `employee_status`, `employee_employmentStatus`, `employee_department`, `employee_position`, `employee_photo`) VALUES
+(13310146, 'Mariano', 'Jaycee', 'Lim', '1996-02-24', '198 Baraca Camachille Subic Zambales', 'alohajaycee@gmail.com', 1, 2, 4, NULL, 1, 1, 8, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -196,6 +206,13 @@ CREATE TABLE `load` (
   `load_dayCode` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `load`
+--
+
+INSERT INTO `load` (`load_id`, `load_subject`, `load_employee`, `load_timeStart`, `load_timeEnd`, `load_dayCode`) VALUES
+(2, 2, 13310146, '13:00:00', '16:00:00', 'W');
+
 -- --------------------------------------------------------
 
 --
@@ -208,6 +225,13 @@ CREATE TABLE `pin` (
   `pin_load` int(12) NOT NULL,
   `pin_expiration` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pin`
+--
+
+INSERT INTO `pin` (`pin_id`, `pin_code`, `pin_load`, `pin_expiration`) VALUES
+(1, 123456, 2, '2017-11-30 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -267,6 +291,43 @@ CREATE TABLE `question` (
   `question_subcategory` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`question_id`, `question_question`, `question_subcategory`) VALUES
+(181, 'Has mastery of the subject matter.', 1),
+(240, 'Is up-to-date in knowledge of the subject.', 1),
+(241, 'Shows evidence of systematic planning of lessons presented.', 1),
+(242, 'Points out relationship of subject matter with other disciplines.', 1),
+(243, 'Integrates Christian values in subject matter and in teaching.', 1),
+(244, 'Is articulate in communicating ideas.', 2),
+(245, 'Makes the lesson interesting and pertinent.', 2),
+(246, 'Uses variety of techniques to encourage student participation and involvement.', 2),
+(247, 'Provides opportunities for students to develop critical and analytical thinking.', 2),
+(248, 'Uses educational technologies and library resources.', 2),
+(249, 'Utilizes community resources (e.g. problem condition, etc.) to enrich lessons.', 2),
+(250, 'Commands student respect without force.', 3),
+(251, 'Disciplines and handles cases of individual and group discipline appropriately and tactfully.', 3),
+(252, 'Maintains conducive learning atmosphere.', 3),
+(253, 'Orients students on course objectives and grading system.', 3),
+(254, 'Returns corrected test papers and inform students about their grades.', 3),
+(255, 'Utilizes school facilities properly.', 3),
+(256, 'Accomplishes the lesson on time.', 3),
+(257, 'Follows schedules of examination dates (Prelims, Mid-term, Finals).', 3),
+(258, 'Makes himself/herself available to students for consultation/assistance', 4),
+(259, 'Respects students’ ideas and opinions', 4),
+(260, 'Manifests sincerity and fairness in dealing with students', 4),
+(261, 'Provides for individual differences', 4),
+(262, 'Maintains rapport with students', 4),
+(263, 'Attends classes regularly', 5),
+(264, 'Starts and ends classes on time', 5),
+(265, 'Adapts flexibility to cope with varied classroom situations', 5),
+(266, 'Manifests self-confidence', 5),
+(267, 'Shows professional dedication and commitment to duty.', 5),
+(268, 'Sets the example in ethical and moral behavior (observing proper decorum, e.g. manner of speaking, dressing, etc. in the campus.)', 5),
+(269, 'Comments and suggestions to improve the teaching-learning situation.', 7);
+
 -- --------------------------------------------------------
 
 --
@@ -289,8 +350,18 @@ CREATE TABLE `session` (
   `session_id` int(12) NOT NULL,
   `session_pin` int(12) NOT NULL,
   `session_score` int(12) DEFAULT NULL,
-  `session_dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `session_dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `session`
+--
+
+INSERT INTO `session` (`session_id`, `session_pin`, `session_score`, `session_dateCreated`) VALUES
+(1, 1, NULL, '2017-11-02 03:04:24'),
+(2, 1, NULL, '2017-11-02 03:10:50'),
+(3, 1, NULL, '2017-11-02 06:51:15'),
+(4, 1, NULL, '2017-11-02 06:55:57');
 
 -- --------------------------------------------------------
 
@@ -338,6 +409,18 @@ CREATE TABLE `subcategory` (
   `subcategory_category` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `subcategory`
+--
+
+INSERT INTO `subcategory` (`subcategory_id`, `subcategory_name`, `subcategory_description`, `subcategory_category`) VALUES
+(1, 'Knowledge of Subject Matter', NULL, 1),
+(2, 'Teaching Skills', NULL, 1),
+(3, 'Classroom Management', NULL, 1),
+(4, 'Relationship with Students', NULL, 2),
+(5, 'Personal Characteristics', NULL, 2),
+(7, 'Comments and Suggestions', NULL, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -351,6 +434,13 @@ CREATE TABLE `subject` (
   `subject_description` varchar(255) DEFAULT NULL,
   `subject_unit` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`subject_id`, `subject_name`, `subject_code`, `subject_description`, `subject_unit`) VALUES
+(2, 'Method in Research and Writing', 'BSCS30', NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -524,7 +614,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `civilstatus`
@@ -560,13 +650,13 @@ ALTER TABLE `gender`
 -- AUTO_INCREMENT for table `load`
 --
 ALTER TABLE `load`
-  MODIFY `load_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `load_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pin`
 --
 ALTER TABLE `pin`
-  MODIFY `pin_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `pin_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `position`
@@ -584,7 +674,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `question_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
 
 --
 -- AUTO_INCREMENT for table `religion`
@@ -596,7 +686,7 @@ ALTER TABLE `religion`
 -- AUTO_INCREMENT for table `session`
 --
 ALTER TABLE `session`
-  MODIFY `session_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `session_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sheet`
@@ -614,13 +704,13 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `subcategory`
 --
 ALTER TABLE `subcategory`
-  MODIFY `subcategory_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `subcategory_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `subject_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `subject_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `type`

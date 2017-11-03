@@ -10,6 +10,21 @@ class employee_model extends CI_Model {
 	function get_filter(){
 		return $this->db->get('department')->result_array();
 	}
+	function get_gender(){
+		return $this->db->get('gender')->result_array();
+	}
+	function get_cstatus(){
+		return $this->db->get('civilstatus')->result_array();
+	}
+	function get_rel(){
+		return $this->db->get('religion')->result_array();
+	}
+	function get_estatus(){
+		return $this->db->get('employmentstatus')->result_array();
+	}
+	function get_empposition(){
+		return $this->db->get('position')->result_array();
+	}
 	function get_employee(){
 		return $this->db
 					->join('department','employee.employee_department=department.department_id','left')
@@ -19,7 +34,7 @@ class employee_model extends CI_Model {
 	function view_employee(){
 
 	}
-	function add_employee($data){
+	function insert_employee($data){
 		$this->db->insert('employee',$data);
 	}
 }

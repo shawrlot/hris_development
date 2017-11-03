@@ -54,6 +54,9 @@ p, h6 {
 .accent {
 	color: #2196F3 !important;
 }
+.bg-accent {
+	background-color: #2196F3 !important ;
+}
 .e-dropdown {
 	margin-top: 10px;
 	width: 150px;
@@ -240,4 +243,16 @@ p, h6 {
 	height: 65px; 
 	width: 65px; 
 	border-radius: 100%;
+}
+.Category {
+	padding-left: 90px;
+	padding-right: 90px;
+}
+.devider {
+	margin-left: 15px;
+	margin-right: 90px;
+}
+.button-placement {
+	padding-left: 15px;
+	padding-right: 15px;
 }
