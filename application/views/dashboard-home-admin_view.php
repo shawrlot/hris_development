@@ -44,12 +44,10 @@ switch ($active_filter) {
 			    </form>
 
 			  </li>
-	
 
 			</ul>
 		</div>
 	<?php foreach ($posts as $post) { 
-
 
 		if ($post['type_name']=='event') {?>
 				<div class=" mb-3 col-11 card pl-0 pr-0 mx-auto shadow-light c-raduis">
@@ -124,7 +122,7 @@ switch ($active_filter) {
 		</div>
  				
 		<div class="form-group">
- 		 <label for="comment">Content</label>
+ 		 <label for="comment">Description</label>
  		 <textarea class="form-control" rows="5" id="comment" placeholder="Content" name="announce_content"></textarea>
 		</div>
 
