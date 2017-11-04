@@ -6,7 +6,7 @@ class Employee extends CI_Controller {
 		parent::__construct();
 		$this->load->model('employee_model');
 	}
-	public function index(){if($this->session->userdata('logged_in')){
+	public function index(){
 		$data['title'] = 'Employee';
 		$data['active'] = 'employee';
 		$data['filters'] = $this->employee_model->get_filter();
@@ -18,10 +18,9 @@ class Employee extends CI_Controller {
 		$data['employees'] = $this->employee_model->get_employee();
 		$this->load->view('employee_view',$data);
 		echo "sample";
-	} else { redirect('login');}
-}
+	}
 
-	function insert_employee(){if($this->session->userdata('logged_in')){
+	function insert_employee(){
 		$data = array (
 			'employee_id' => $this->input->post('idnum'),
 			'employee_lastName' => $this->input->post('lname'),
@@ -40,7 +39,5 @@ class Employee extends CI_Controller {
 		);
 		$this->employee_model->insert_employee($data);
 		redirect('employee');
-	} else { redirect('login');}
-}
-
+	}
 }
